@@ -350,110 +350,126 @@ export default function Home() {
       </section>
 
       {/* NOVA SEÇÃO: Bônus Especial */}
-      <section className="py-20 bg-gradient-to-b from-[#1A2C4D] to-[#2D1A63] relative overflow-hidden">
-        {/* Elementos decorativos */}
-        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
-          <div className="absolute w-full h-full">
-            {Array.from({ length: 50 }).map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-1 h-1 bg-[#FFD700] rounded-full"
-                style={{
-                  top: `${Math.random() * 100}%`,
-                  left: `${Math.random() * 100}%`,
-                  opacity: Math.random() * 0.7 + 0.3,
-                  animation: `twinkle ${2 + Math.random() * 5}s infinite ${Math.random() * 5}s`,
-                }}
-              ></div>
-            ))}
+<section className="py-20 bg-gradient-to-b from-[#1A2C4D] to-[#2D1A63] relative overflow-hidden">
+  {/* Elementos decorativos */}
+  <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-20 pointer-events-none">
+    <div className="absolute w-full h-full">
+      {Array.from({ length: 50 }).map((_, i) => (
+        <div
+          key={i}
+          className="absolute w-1 h-1 bg-[#FFD700] rounded-full"
+          style={{
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            opacity: Math.random() * 0.7 + 0.3,
+            animation: `twinkle ${2 + Math.random() * 5}s infinite ${Math.random() * 5}s`,
+          }}
+        ></div>
+      ))}
+    </div>
+  </div>
+
+  <div className="container px-4 mx-auto">
+    <div className="relative">
+      {/* SELO MOBILE - centralizado no topo */}
+      <div className="md:hidden flex justify-center absolute -top-12 left-0 w-full z-30">
+        <div className="relative w-24 h-24 rotate-12 animate-pulse flex flex-col items-center justify-center">
+          <div className="absolute inset-0 bg-[#FFD700] rounded-full"></div>
+          <div className="absolute inset-1 bg-[#0A1F33] rounded-full"></div>
+          <div className="relative z-10 text-center leading-tight">
+            <p className="text-[#FFD700] font-bold text-[10px]">BÔNUS</p>
+            <p className="text-[#FFD700] font-bold text-[10px]">EXCLUSIVO</p>
           </div>
         </div>
+      </div>
 
-        <div className="container px-4 mx-auto">
-          <div className="relative">
-            {/* Selo de bônus */}
-            <div className="absolute -top-10 -right-10 md:right-0 z-10 w-32 h-32 md:w-40 md:h-40 flex items-center justify-center rotate-12 animate-pulse">
-              <div className="absolute inset-0 bg-[#FFD700] rounded-full"></div>
-              <div className="absolute inset-1 bg-[#0A1F33] rounded-full"></div>
-              <div className="relative text-center">
-                <p className="text-[#FFD700] font-bold text-sm md:text-base">BÔNUS</p>
-                <p className="text-[#FFD700] font-bold text-sm md:text-base">EXCLUSIVO</p>
+      {/* SELO DESKTOP - topo direito */}
+      <div className="hidden md:flex absolute -top-10 -right-10 z-30 w-40 h-40 items-center justify-center rotate-12 animate-pulse">
+        <div className="absolute inset-0 bg-[#FFD700] rounded-full"></div>
+        <div className="absolute inset-1 bg-[#0A1F33] rounded-full"></div>
+        <div className="relative text-center leading-tight">
+          <p className="text-[#FFD700] font-bold text-sm">BÔNUS</p>
+          <p className="text-[#FFD700] font-bold text-sm">EXCLUSIVO</p>
+        </div>
+      </div>
+
+      <div className="p-6 md:p-10 rounded-xl bg-gradient-to-br from-[#0A1F33]/90 to-[#1A2C4D]/90 border border-[#FFD700]/30 shadow-[0_10px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(255,215,0,0.3)]">
+        <div className="flex flex-col lg:flex-row items-center gap-10">
+          
+          {/* BLOCO DA IMAGEM */}
+          <div className="w-full lg:w-1/2">
+            <div className="relative">
+              <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700]/20 to-transparent rounded-lg"></div>
+              <Image
+                src="/images/marcio.jpg"
+                width={600}
+                height={600}
+                alt="Consulta de Tarot com Márcio"
+                className="relative z-10 rounded-lg shadow-[0_0_30px_rgba(0,0,0,0.3)] border-2 border-[#FFD700]/20"
+              />
+            </div>
+          </div>
+
+          {/* BLOCO DE TEXTO */}
+          <div className="w-full lg:w-1/2 relative">
+            <div className="inline-flex items-center justify-center px-6 py-2 mb-6 text-sm font-medium rounded-full bg-[#FFD700]/20 text-[#FFD700]">
+              <GiftIcon className="w-4 h-4 mr-2" />
+              Oferta por Tempo Limitado
+            </div>
+
+            <h2 className="mb-6 text-3xl md:text-4xl font-bold">
+              <span className="text-[#FFD700]">Você sente que precisa</span> de respostas?
+            </h2>
+
+            <p className="mb-6 text-xl text-gray-200">
+              O Tarot pode te ajudar a enxergar o que você ainda não vê.
+            </p>
+
+            <div className="p-6 mb-8 rounded-lg bg-[#0A1F33]/80 border border-[#FFD700]/20">
+              <h3 className="mb-4 text-2xl font-semibold text-[#FFD700] flex items-center">
+                <LightbulbIcon className="w-6 h-6 mr-2" /> Bônus Imperdível!
+              </h3>
+              <p className="mb-4 text-lg text-white">
+                Ao adquirir o eBook <span className="font-semibold">hoje</span>, você receberá{" "}
+                <span className="text-[#FFD700] font-bold">GRATUITAMENTE</span> uma consulta personalizada de Tarot com Márcio!
+              </p>
+              <ul className="space-y-3 mb-4">
+                {[
+                  "Consulta individual focada na sua questão mais urgente",
+                  "Orientação clara e direta para seu momento atual",
+                  "Resposta enviada por áudio diretamente no seu WhatsApp",
+                  "Valor normal: R$97,00 - HOJE: GRÁTIS!",
+                ].map((item, index) => (
+                  <li key={index} className="flex items-start">
+                    <ArrowRightIcon className="w-5 h-5 mt-1 mr-2 text-[#FFD700]" />
+                    <span className="text-gray-200">{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="flex items-center p-3 rounded-lg bg-[#FFD700]/10 border border-[#FFD700]/30">
+                <ShieldIcon className="w-6 h-6 mr-3 text-[#FFD700]" />
+                <p className="text-sm text-gray-200">
+                  Este bônus tem <span className="font-bold">vagas limitadas</span> e pode ser removido a qualquer momento.
+                </p>
               </div>
             </div>
 
-            <div className="p-6 md:p-10 rounded-xl bg-gradient-to-br from-[#0A1F33]/90 to-[#1A2C4D]/90 border border-[#FFD700]/30 shadow-[0_10px_50px_rgba(0,0,0,0.5),0_0_30px_rgba(255,215,0,0.3)]">
-              <div className="flex flex-col lg:flex-row items-center gap-10">
-                <div className="w-full lg:w-1/2">
-                  <div className="relative">
-                    <div className="absolute inset-0 bg-gradient-to-r from-[#FFD700]/20 to-transparent rounded-lg"></div>
-                    <Image
-                      src="/images/marcio.jpg"
-                      width={600}
-                      height={600}
-                      alt="Consulta de Tarot com Márcio"
-                      className="relative z-10 rounded-lg shadow-[0_0_30px_rgba(0,0,0,0.3)] border-2 border-[#FFD700]/20"
-                    />
-                  </div>
-                </div>
-
-                <div className="w-full lg:w-1/2">
-                  <div className="inline-flex items-center justify-center px-6 py-2 mb-6 text-sm font-medium rounded-full bg-[#FFD700]/20 text-[#FFD700]">
-                    <GiftIcon className="w-4 h-4 mr-2" />
-                    Oferta por Tempo Limitado
-                  </div>
-
-                  <h2 className="mb-6 text-3xl md:text-4xl font-bold">
-                    <span className="text-[#FFD700]">Você sente que precisa</span> de respostas?
-                  </h2>
-
-                  <p className="mb-6 text-xl text-gray-200">
-                    O Tarot pode te ajudar a enxergar o que você ainda não vê.
-                  </p>
-
-                  <div className="p-6 mb-8 rounded-lg bg-[#0A1F33]/80 border border-[#FFD700]/20">
-                    <h3 className="mb-4 text-2xl font-semibold text-[#FFD700] flex items-center">
-                      <LightbulbIcon className="w-6 h-6 mr-2" /> Bônus Imperdível!
-                    </h3>
-                    <p className="mb-4 text-lg text-white">
-                      Ao adquirir o eBook <span className="font-semibold">hoje</span>, você receberá{" "}
-                      <span className="text-[#FFD700] font-bold">GRATUITAMENTE</span> uma consulta personalizada de
-                      Tarot com Márcio!
-                    </p>
-                    <ul className="space-y-3 mb-4">
-                      {[
-                        "Consulta individual focada na sua questão mais urgente",
-                        "Orientação clara e direta para seu momento atual",
-                        "Resposta enviada por áudio diretamente no seu WhatsApp",
-                        "Valor normal: R$97,00 - HOJE: GRÁTIS!",
-                      ].map((item, index) => (
-                        <li key={index} className="flex items-start">
-                          <ArrowRightIcon className="w-5 h-5 mt-1 mr-2 text-[#FFD700]" />
-                          <span className="text-gray-200">{item}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    <div className="flex items-center p-3 rounded-lg bg-[#FFD700]/10 border border-[#FFD700]/30">
-                      <ShieldIcon className="w-6 h-6 mr-3 text-[#FFD700]" />
-                      <p className="text-sm text-gray-200">
-                        Este bônus tem <span className="font-bold">vagas limitadas</span> e pode ser removido a qualquer
-                        momento.
-                      </p>
-                    </div>
-                  </div>
-
-                  <Button
-                    size="lg"
-                    className="w-full py-6 text-lg font-bold transition-all bg-[#FFD700] hover:bg-[#FFD700]/90 text-[#0A1F33] shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)]"
-                    onClick={() => window.open(HOTMART_LINK, "_blank")}
-                  >
-                    QUERO O EBOOK + CONSULTA GRÁTIS
-                  </Button>
-                </div>
-              </div>
-            </div>
+            <Button
+              size="lg"
+              className="w-full py-6 text-lg font-bold transition-all bg-[#FFD700] hover:bg-[#FFD700]/90 text-[#0A1F33] shadow-[0_0_30px_rgba(255,215,0,0.4)] hover:shadow-[0_0_40px_rgba(255,215,0,0.6)]"
+              onClick={() => window.open(HOTMART_LINK, "_blank")}
+            >
+              QUERO O EBOOK + CONSULTA GRÁTIS
+            </Button>
           </div>
+
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* NOVA SEÇÃO: Sobre o Autor */}
       <section className="py-20 bg-[#0A1F33] relative">
