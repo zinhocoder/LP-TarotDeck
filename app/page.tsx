@@ -20,7 +20,7 @@ import {
 import TarotDeck from "@/components/tarot-deck"
 import WhatsAppButton from "@/components/whatsapp-button"
 
-const HOTMART_LINK = "https://hotmart.com/pt-br/marketplace/produtos/os-22-arcanos-maior-do-tarot/N99568823B"
+const HOTMART_LINK = "https://pay.hotmart.com/N99568823B"
 
 export default function Home() {
   return (
