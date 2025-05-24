@@ -469,6 +469,124 @@ export default function Home() {
   </div>
 </section>
 
+{/* NOVA SEÇÃO: Tiragens Exclusivas */}
+      <section className="py-20 bg-gradient-to-b from-[#2D1A63] to-[#0A1F33] relative overflow-hidden">
+        {/* Elementos decorativos */}
+        <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
+          <svg className="absolute w-full h-full">
+            <defs>
+              <pattern id="hearts-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                <path d="M40 20 C30 10, 10 10, 10 30 C10 50, 40 70, 40 70 C40 70, 70 50, 70 30 C70 10, 50 10, 40 20 Z" 
+                      fill="none" stroke="#FFD700" strokeWidth="0.5" opacity="0.3"/>
+              </pattern>
+            </defs>
+            <rect x="0" y="0" width="100%" height="100%" fill="url(#hearts-pattern)" />
+          </svg>
+        </div>
+
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-col lg:flex-row items-center gap-12">
+            
+            {/* BLOCO DA IMAGEM */}
+            <div className="w-full lg:w-1/2">
+              <div className="relative">
+                <div className="absolute inset-0 bg-gradient-to-br from-[#FFD700]/20 to-[#FFD700]/5 rounded-xl transform rotate-3"></div>
+                <div className="relative z-10 p-6 rounded-xl bg-gradient-to-br from-[#1A2C4D]/80 to-[#0A1F33]/80 border border-[#FFD700]/20 shadow-[0_0_30px_rgba(255,215,0,0.2)]">
+                  <Image
+                    src="/images/tiragens.png"
+                    width={500}
+                    height={350}
+                    alt="Tiragem de relacionamento com cartas de Tarot"
+                    className="rounded-lg shadow-lg w-full h-auto"
+                  />
+                  <div className="absolute -top-3 -right-3 w-16 h-16 rounded-full bg-gradient-to-br from-[#FFD700] to-[#FFA500] flex items-center justify-center shadow-lg">
+                    <HeartIcon className="w-8 h-8 text-[#0A1F33]" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* BLOCO DE TEXTO */}
+            <div className="w-full lg:w-1/2">
+              <div className="inline-flex items-center justify-center px-6 py-2 mb-6 text-sm font-medium rounded-full bg-[#FFD700]/10 text-[#FFD700]">
+                <SparklesIcon className="w-4 h-4 mr-2" />
+                Tiragens Exclusivas
+              </div>
+
+              <h2 className="mb-6 text-3xl md:text-4xl font-bold">
+                Você também vai aprender <span className="text-[#FFD700]">tiragens exclusivas</span>
+              </h2>
+
+              <p className="mb-8 text-xl text-gray-200">
+                Métodos únicos e poderosos para diferentes situações da vida, desde questões amorosas até leituras completas e objetivas.
+              </p>
+
+              <div className="space-y-6">
+                {[
+                  {
+                    icon: <HeartIcon className="w-6 h-6" />,
+                    title: "O Templo de Afrodite",
+                    description: "Tiragem especial para questões amorosas e relacionamentos",
+                    highlight: "para questões amorosas"
+                  },
+                  {
+                    icon: <SparklesIcon className="w-6 h-6" />,
+                    title: "A Mandala com 13 cartas",
+                    description: "Método completo para leituras profundas e transformadoras",
+                    highlight: "perfeita para leituras completas"
+                  },
+                  {
+                    icon: <ZapIcon className="w-6 h-6" />,
+                    title: "A clássica tiragem de 3 cartas",
+                    description: "Técnica versátil para respostas rápidas e precisas",
+                    highlight: "ideal para respostas objetivas, em qualquer situação"
+                  }
+                ].map((item, index) => (
+                  <div
+                    key={index}
+                    className="flex items-start p-4 rounded-lg bg-[#0A1F33]/60 border border-[#FFD700]/10 hover:border-[#FFD700]/30 hover:bg-[#0A1F33]/80 transition-all duration-300 group"
+                  >
+                    <div className="flex items-center justify-center w-12 h-12 mr-4 rounded-full bg-gradient-to-br from-[#FFD700]/20 to-[#FFD700]/10 text-[#FFD700] group-hover:from-[#FFD700]/30 group-hover:to-[#FFD700]/20">
+                      {item.icon}
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="mb-2 text-xl font-semibold text-white group-hover:text-[#FFD700]">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-300 group-hover:text-gray-200">
+                        {item.description}
+                      </p>
+                      <p className="mt-2 text-sm text-[#FFD700] font-medium">
+                        • {item.highlight}
+                      </p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <div className="mt-8 p-6 rounded-lg bg-gradient-to-r from-[#FFD700]/10 to-[#FFD700]/5 border border-[#FFD700]/20">
+                <div className="flex items-center mb-3">
+                  <LightbulbIcon className="w-6 h-6 mr-3 text-[#FFD700]" />
+                  <h4 className="text-lg font-semibold text-white">Dica Especial</h4>
+                </div>
+                <p className="text-gray-200">
+                  Cada tiragem vem com instruções detalhadas, exemplos práticos e dicas para interpretação mais assertiva. 
+                  Você dominará desde consultas rápidas até leituras complexas!
+                </p>
+              </div>
+
+              <Button
+                className="w-full max-w-sm mx-auto px-6 py-3 mt-6 text-base md:text-lg font-medium transition-all bg-[#FFD700] hover:bg-[#FFD700]/90 text-[#0A1F33] shadow-[0_0_15px_rgba(255,215,0,0.3)]"  
+                onClick={() => window.open(HOTMART_LINK, "_blank")}
+              >
+                QUERO APRENDER ESSAS TIRAGENS
+              </Button>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
 
 
       {/* NOVA SEÇÃO: Sobre o Autor */}
